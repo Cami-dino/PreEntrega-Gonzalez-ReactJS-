@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cosplay Zone</title>
+  <title>Tienda de Maquillajes y Disfraces</title>
   <style>
     /* Estilos básicos */
     body {
@@ -11,77 +11,107 @@
       margin: 0;
       padding: 0;
     }
-
-    /* Estilos para la barra de navegación */
     nav {
       background-color: #333;
-      color: #fff;
-      padding: 1em;
+      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem;
     }
-
+    nav h1, nav ul, nav .cart {
+      margin: 0;
+    }
+    nav h1 a {
+      color: white;
+      text-decoration: none;
+    }
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1em;
-      margin: 0;
+      gap: 1rem;
       padding: 0;
     }
-
+    nav ul li {
+      margin: 0;
+    }
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
     }
-
-    /* Estilos para el ícono del carrito */
+    nav a:hover {
+      text-decoration: underline;
+    }
     .cart {
-      font-size: 1.8em; /* Tamaño más grande para el ícono del carrito */
       display: flex;
       align-items: center;
+      font-size: 1.5rem;
     }
-
     .cart span {
-      font-weight: bold;
-      margin-left: 0.3em;
+      margin-left: 0.5rem;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      padding: 0.2rem 0.5rem;
+      font-size: 1rem;
     }
-
-    .item-list-container {
-      padding: 2em;
-      text-align: center;
+    .container {
+      padding: 1rem;
+    }
+    .product {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+    .product h2 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .product p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
 
-  <!-- Barra de navegación -->
+  <!--!-------- Navbar ----------->
   <nav>
+    <h1><a href="/">Tienda</a></h1>
     <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="/category/maquillajes">Maquillajes</a></li>
+      <li><a href="/category/disfraces">Disfraces</a></li>
     </ul>
-
-    <!-- Icono del carrito con estilo -->
     <div class="cart">
-      🛒 <span>3</span> 
+      <a href="/cart">🛒</a>
+      <span>3</span> 
     </div>
   </nav>
 
-  <div class="item-list-container">
-    <h1>¡Bienvenido a Cosplay Zone!</h1> 
+  <!--!--------- Catálogo ------------->
+  <div class="container">
+    <h1>Catálogo de Productos</h1>
+    <div class="product">
+      <h2><a href="/item/1">Maquillaje Artístico</a></h2>
+      <p>Categoría: Maquillajes</p>
+      <p>Precio: $15.99</p>
+    </div>
+    <div class="product">
+      <h2><a href="/item/2">Disfraz de Vampiro</a></h2>
+      <p>Categoría: Disfraces</p>
+      <p>Precio: $49.99</p>
+    </div>
+    <div class="product">
+      <h2><a href="/item/3">Sombras de Fantasía</a></h2>
+      <p>Categoría: Maquillajes</p>
+      <p>Precio: $25.50</p>
+    </div>
+    <div class="product">
+      <h2><a href="/item/4">Disfraz de Pirata</a></h2>
+      <p>Categoría: Disfraces</p>
+      <p>Precio: $39.99</p>
+    </div>
   </div>
 
-  <!--!------MAIN--------->
-  <main>
-    <h2>Aqui podras encontrar todo lo que imaginas</h2>
-  </main>
-
-  <!--!------FOOTER--------->
-  <footer>
-    <p>&copy; 2024 Mi Sitio Web</p>
-  </footer>
 
 </body>
 </html>
