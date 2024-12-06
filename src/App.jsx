@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Catalogo from './components/Catalogo';
-import Item from './components/Item';
-import Category from './components/Category';
+import ProductList from "./components/ProductList"
+import ProductDetail from "./components/ProductDetail"
+import Nav from "./components/NavBar"
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
-const App = () => {
-  const [productos] = useState([
-    { id: 1, nombre: 'Maquillaje Artístico', categoria: 'maquillajes', precio: 15.99 },
-    { id: 2, nombre: 'Disfraz de Vampiro', categoria: 'disfraces', precio: 49.99 },
-    { id: 3, nombre: 'Sombras de Fantasía', categoria: 'maquillajes', precio: 25.50 },
-    { id: 4, nombre: 'Disfraz de Pirata', categoria: 'disfraces', precio: 39.99 }
-  ]);
-
+function App() {
   return (
     <Router>
-      <NavBar />
+      <Nav />
       <Routes>
-        <Route path="/" element={<Catalogo productos={productos} />} />
-        <Route path="/item/:id" element={<Item productos={productos} />} />
-        <Route path="/category/:categoryId" element={<Category productos={productos} />} />
+        <Route path="/" element={<ProductList />} />
+        <Route path="/category/:categoryId" element={<ProductList />} />
+        <Route path="/product/:productId" element={<ProductDetail />} /> 
+        <Route path="*" element={<h1>404 :( Not found</h1>} />
       </Routes>
     </Router>
   );
-};
+}
 
-export default App;
+export default App

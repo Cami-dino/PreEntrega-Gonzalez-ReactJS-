@@ -1,117 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda de Maquillajes y Disfraces</title>
-  <style>
-    /* Estilos básicos */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    nav {
-      background-color: #333;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-    }
-    nav h1, nav ul, nav .cart {
-      margin: 0;
-    }
-    nav h1 a {
-      color: white;
-      text-decoration: none;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .cart {
-      display: flex;
-      align-items: center;
-      font-size: 1.5rem;
-    }
-    .cart span {
-      margin-left: 0.5rem;
-      background-color: red;
-      color: white;
-      border-radius: 50%;
-      padding: 0.2rem 0.5rem;
-      font-size: 1rem;
-    }
-    .container {
-      padding: 1rem;
-    }
-    .product {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin: 1rem 0;
-    }
-    .product h2 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
-    .product p {
-      margin: 0.5rem 0;
-    }
-  </style>
-</head>
-<body>
-
-  <!--!-------- Navbar ----------->
-  <nav>
-    <h1><a href="/">Tienda</a></h1>
-    <ul>
-      <li><a href="/category/maquillajes">Maquillajes</a></li>
-      <li><a href="/category/disfraces">Disfraces</a></li>
-    </ul>
-    <div class="cart">
-      <a href="/cart">🛒</a>
-      <span>3</span> 
-    </div>
-  </nav>
-
-  <!--!--------- Catálogo ------------->
-  <div class="container">
-    <h1>Catálogo de Productos</h1>
-    <div class="product">
-      <h2><a href="/item/1">Maquillaje Artístico</a></h2>
-      <p>Categoría: Maquillajes</p>
-      <p>Precio: $15.99</p>
-    </div>
-    <div class="product">
-      <h2><a href="/item/2">Disfraz de Vampiro</a></h2>
-      <p>Categoría: Disfraces</p>
-      <p>Precio: $49.99</p>
-    </div>
-    <div class="product">
-      <h2><a href="/item/3">Sombras de Fantasía</a></h2>
-      <p>Categoría: Maquillajes</p>
-      <p>Precio: $25.50</p>
-    </div>
-    <div class="product">
-      <h2><a href="/item/4">Disfraz de Pirata</a></h2>
-      <p>Categoría: Disfraces</p>
-      <p>Precio: $39.99</p>
-    </div>
-  </div>
-
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosplay Zone</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
