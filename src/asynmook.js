@@ -26,7 +26,7 @@ const products = [
         category: "maquillaje",
         img: "/public/img/sombras3.jpeg",
         stock: 15,
-        description: "Descripción de Dell XPS 13",
+        description: "Descripción de maquillaje",
     },
     {
         id: "4",

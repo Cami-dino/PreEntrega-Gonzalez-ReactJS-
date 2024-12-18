@@ -1,20 +1,44 @@
-import ProductList from "./components/ProductList"
-import ProductDetail from "./components/ProductDetail"
-import Nav from "./components/NavBar"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Checkout from "./components/Checkout";
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <Nav />
+    <div>
+      {/* Barra de navegación */}
+      <NavBar />
+      
+      {/* Configuración de rutas */}
       <Routes>
-        <Route path="/" element={<ProductList />} />
-        <Route path="/category/:categoryId" element={<ProductList />} />
-        <Route path="/product/:productId" element={<ProductDetail />} /> 
-        <Route path="*" element={<h1>404 :( Not found</h1>} />
-      </Routes>
-    </Router>
-  );
-}
+        {/* Página principal con todos los productos */}
+        <Route
+          path="/"
+          element={<ItemListContainer greeting="¡Bienvenido a nuestra tienda!" />}
+        />
 
-export default App
+        {/* Productos por categoría */}
+        <Route
+          path="/category/:categoryId"
+          element={<ItemListContainer greeting="Explora nuestros productos" />}
+        />
+
+        {/* Detalle de un producto */}
+        <Route
+          path="/item/:id"
+          element={<ItemDetailContainer />}
+        />
+
+        {/* Página de checkout */}
+        <Route
+          path="/checkout"
+          element={<Checkout />}
+        />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;

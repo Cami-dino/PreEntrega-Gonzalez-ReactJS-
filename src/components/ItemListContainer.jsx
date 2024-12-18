@@ -1,12 +1,19 @@
-// src/components/ItemListContainer.jsx
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getProducts } from "../asyncmock";
+import ItemDetail from "./ItemDetail.jsx";
 
-const ItemListContainer = ({ greeting }) => {
-  return (
-    <div style={{ padding: '2em', textAlign: 'center' }}>
-      <h2>{greeting}</h2>
-    </div>
-  );
+const ItemDetailContainer = () => {
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    getProducts().then((data) =>
+      setProduct(data.find((item) => item.id === id))
+    );
+  }, [id]);
+
+  return product ? <ItemDetail product={product} /> : <p>Cargando...</p>;
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

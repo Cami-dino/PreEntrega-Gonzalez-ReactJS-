@@ -1,21 +1,16 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Item = ({ productos }) => {
-  const { id } = useParams(); // Captura el ID desde la URL
-  const producto = productos.find((prod) => prod.id === parseInt(id)); // Busca el producto por ID
-
-  if (!producto) {
-    return <p>Producto no encontrado</p>;
-  }
-
+const Item = ({ product }) => {
   return (
-    <div>
-      <h1>{producto.nombre}</h1>
-      <p>Categoría: {producto.categoria}</p>
-      <p>Precio: ${producto.precio}</p>
+    <div style={{ border: "1px solid #ccc", padding: "1rem", textAlign: "center" }}>
+      <img src={product.img} alt={product.name} style={{ maxWidth: "100%" }} />
+      <h3>{product.name}</h3>
+      <p>${product.price}</p>
+      <Link to={`/item/${product.id}`}>Ver detalle</Link>
     </div>
   );
 };
 
 export default Item;
+
