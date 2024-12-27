@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CartWidget from "./CartWidget";
+import { useCart } from "../components/CartContext";
 
 const NavBar = () => {
+  const { totalItems } = useCart();
+
   const categorias = ["maquillaje", "cosplay", "props"];
 
   return (
@@ -24,10 +26,13 @@ const NavBar = () => {
           </li>
         ))}
       </ul>
-      <CartWidget />
+      <div>
+        <Link to="/cart" style={{ color: "white", textDecoration: "none" }}>
+          🛒 {totalItems}
+        </Link>
+      </div>
     </nav>
   );
 };
 
 export default NavBar;
-
